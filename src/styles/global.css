@@ -69,3 +69,32 @@ body {
   .tech-stack-bar .icon-container .icon-list {
     @apply flex space-x-6 md:justify-around;
   }
+
+  /* Footer */
+  .footer {
+    @apply bg-gray-800 text-white p-4 min-h-[400px] flex flex-col justify-between;
+  }
+  
+  .footer .section {
+    @apply row-span-1 p-2;
+  }
+  
+  .footer .section h3 {
+    @apply text-lg font-bold text-purple-500;
+  }
+  
+  .footer .section ul {
+    @apply list-disc pl-5 font-mono;
+  }
+  
+  .footer .section ul li {
+    @apply my-2;
+  }
+  
+  .footer .social-media-links {
+    @apply flex space-x-5 justify-center mt-2;
+  }
+  
+  .footer .copyright {
+    @apply w-full text-center text-sm font-thin;
+  }
