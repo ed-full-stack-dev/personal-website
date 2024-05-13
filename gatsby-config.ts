@@ -1,5 +1,7 @@
 import type { GatsbyConfig } from "gatsby";
-
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `personal-website`,
@@ -12,8 +14,8 @@ const config: GatsbyConfig = {
   plugins: [{
     resolve: 'gatsby-source-contentful',
     options: {
-      "accessToken": "KmGvYjU8tBLYuOX0F800Q-Tz9m5cUEbC3YUlC20hAuA",
-      "spaceId": "d502s68us4nn"
+      "accessToken": process.env.CONTENTFUL_ACCESS_TOKEN,
+      "spaceId": process.env.CONTENTFUL_SPACE_ID
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-postcss", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
