@@ -2,6 +2,8 @@ import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 import Navigation from "../components/navigation";
 import HeroSection from "../components/hero-section";
+import TechStackBar from "../components/tech-stack-section";
+import Footer from "../components/footer";
 
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -9,6 +11,8 @@ const IndexPage: React.FC<PageProps> = () => {
     <main>
       <Navigation />
       <HeroSection />
+      <TechStackBar />
+      <Footer />
     </main>
   )
 }

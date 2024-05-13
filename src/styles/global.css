@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    scroll-behavior: smooth;
+}
 .gradient-1{
-    background: linear-gradient(to bottom right, #264f95, #4b134f);
+    background: linear-gradient(to bottom, #264f95, #4b134f);
 }
 
 /* hero */
@@ -16,7 +19,7 @@
   }
   
   .content {
-    @apply col-span-2 px-2 my-5;
+    @apply col-span-2 px-2 md:px-5 my-5;
   }
   
   .flex-center {
@@ -32,7 +35,7 @@
   }
   
   .description {
-    @apply text-center md:text-start mt-5;
+    @apply text-lg md:text-2xl font-thin text-center md:text-start mt-5;
   }
   
   .image {
@@ -47,4 +50,22 @@
   }
   .links{
     @apply flex space-x-6 p-3 justify-end md:justify-start;
+  }
+
+  /* Tech Stack Bar */
+  .tech-stack-bar {
+    @apply flex flex-col min-h-[400px] justify-around pb-8;
+    background: linear-gradient(to bottom, #4A1450, #1F2937);
+  }
+  
+  .tech-stack-bar h2 {
+    @apply text-white text-4xl text-center font-bold;
+  }
+  
+  .tech-stack-bar .icon-container {
+    @apply flex justify-center text-white text-6xl sm:overflow-hidden overflow-x-auto;
+  }
+  
+  .tech-stack-bar .icon-container .icon-list {
+    @apply flex space-x-6 md:justify-around;
   }

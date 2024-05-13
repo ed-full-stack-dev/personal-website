@@ -12,6 +12,8 @@ module.exports = {
         'creme': '#F2EFE5',
         'ocean': '#A8D8EA',
         'dark-blue': '#364F6B',
+        'onyx': '#333A3Bff',
+        'mikado-yellow':'#FFC600ff'
       }
     },
   },
