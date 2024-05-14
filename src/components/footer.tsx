@@ -38,8 +38,8 @@ function Footer({ blogs }: any = []) {
                         <a target="_blank" rel="noopener noreferrer" href="https://github.com/ed-full-stack-dev" className="btn">
                             <FaGithub className="icon" />
                         </a>
-                        <a target="_blank" rel="noopener noreferrer" className="btn">
-                            <FaYoutube href='https://www.youtube.com/channel/UC28Ql-WMce8icYWDj-21gwA' className="icon" />
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UC28Ql-WMce8icYWDj-21gwA" className="btn">
+                            <FaYoutube className="icon" />
                         </a>
                     </div>
                 </section>
