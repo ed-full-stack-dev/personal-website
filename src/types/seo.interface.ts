@@ -5,5 +5,7 @@ export default interface I_SEO {
     image: string;
     keywords: string[];
     author: string;
-    imageCard: string;
+    pathname: string;
+    children?: React.ReactNode;
+    twitterUsername: string;
 }

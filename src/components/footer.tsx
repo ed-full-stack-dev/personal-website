@@ -1,8 +1,9 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import { FaGithub, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
+import { ContentfulBlogPost } from '../types/all-contentful-blogs'
 
-function Footer({ blogs }: any = []) {
+function Footer( { blogs }: { blogs: ContentfulBlogPost[] }) {
     return (
         <footer className="footer">
             <div className=" flex-1 grid grid-cols-1 md:grid-cols-3">
@@ -20,7 +21,7 @@ function Footer({ blogs }: any = []) {
                     <ul className="">
                         {blogs && blogs.slice(0, 3).map((blog: any) => (
                             <li key={blog.id} className="my-2">
-                                <Link to={`/blogs/${blog.slug}`} className=" my-2" key={blog.id}>
+                                <Link to={`/blog/${blog.slug}`} className=" my-2" key={blog.id}>
                                     {blog.title}
                                 </Link>
                             </li>
