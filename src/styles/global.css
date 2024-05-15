@@ -98,3 +98,55 @@ body {
   .footer .copyright {
     @apply w-full text-center text-sm font-thin;
   }
+
+  /* Contact */
+  .gradient-background {
+    background: linear-gradient(to bottom, #C3DEE6 0%, #ffffff 100%);
+    @apply gap-y-14;
+  }
+  .intro h1 {
+    @apply text-4xl font-bold text-center mt-4;
+  }
+  .intro p {
+    @apply text-lg font-medium text-center;
+  }
+  .form-wrapper {
+    @apply bg-white grid grid-cols-1 md:grid-cols-4 gap-4 p-4 shadow-2xl rounded-lg;
+    min-width: 80%;
+    max-width: 80%;
+    min-height: 300px;
+    margin-bottom: 100px;
+  }
+  .form-wrapper .blob {
+    @apply col-span-1 rounded-lg p-4 text-gray-600 md:flex flex-col justify-center;
+    background-image: url('../images/blob.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .form-wrapper .blob h2 {
+    @apply text-2xl font-thin text-black;
+  }
+  .form-wrapper .blob p {
+    @apply text-lg font-medium;
+  }
+  .form-wrapper .form {
+    @apply col-span-3;
+  }
+  .form {
+    @apply space-y-5;
+  }
+  .form-group {
+    @apply flex flex-col;
+  }
+  .form-group label {
+    @apply text-lg font-bold text-gray-400;
+  }
+  .form-group input {
+    @apply p-2 rounded-lg border border-gray-300;
+  }
+  .form-group textarea {
+    @apply p-2 rounded-lg border border-gray-300;
+  }
+  .form-group button {
+    @apply p-2 text-white rounded-lg inline-block max-w-max px-12 bg-light-sky-blue hover:bg-light-purple;
+  }

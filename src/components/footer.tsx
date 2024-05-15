@@ -8,8 +8,8 @@ function Footer( { blogs }: { blogs: ContentfulBlogPost[] }) {
         <footer className="footer">
             <div className=" flex-1 grid grid-cols-1 md:grid-cols-3">
                 <section className="section">
-                    <h3 className="">Built with:</h3>
-                    <ul className="">
+                    <h3>Built with:</h3>
+                    <ul>
                         <li className="my-2">React</li>
                         <li className="my-2">Gatsby</li>
                         <li className="my-2">GraphQL</li>
@@ -17,8 +17,8 @@ function Footer( { blogs }: { blogs: ContentfulBlogPost[] }) {
                     </ul>
                 </section>
                 <section className="section">
-                    <h3 className="">Latest Blogs:</h3>
-                    <ul className="">
+                    <h3>Latest Blogs:</h3>
+                    <ul>
                         {blogs && blogs.slice(0, 3).map((blog: any) => (
                             <li key={blog.id} className="my-2">
                                 <Link to={`/blog/${blog.slug}`} className=" my-2" key={blog.id}>
@@ -29,7 +29,7 @@ function Footer( { blogs }: { blogs: ContentfulBlogPost[] }) {
                     </ul>
                 </section>
                 <section className="section">
-                    <h3 className="">
+                    <h3>
                         Social Media Links:
                     </h3>
                     <div className="social-media-links">

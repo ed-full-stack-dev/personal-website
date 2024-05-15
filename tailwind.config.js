@@ -13,7 +13,9 @@ module.exports = {
         'ocean': '#A8D8EA',
         'dark-blue': '#364F6B',
         'onyx': '#333A3Bff',
-        'mikado-yellow':'#FFC600ff'
+        'mikado-yellow':'#FFC600ff',
+        'light-sky-blue':'#C3DEE6',
+        'light-purple':'#8D8DE6',
       }
     },
   },
