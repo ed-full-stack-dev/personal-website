@@ -220,3 +220,85 @@ body {
   .blog .card .author-image {
     @apply w-10 h-10 rounded-full absolute top-2 right-2 z-10;
   }
+
+  /* Blog Post */
+
+.blog-header {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-4 p-4 flex-col items-center shadow-md rounded-xl overflow-hidden my-3;
+}
+
+.blog-header .details {
+    @apply col-span-1 md:col-span-2 flex flex-col items-start space-y-2;
+}
+
+.blog-header .title {
+    @apply text-xl md:text-2xl font-extrabold;
+}
+
+.blog-header .author-info {
+    @apply text-center mt-3 text-lg md:text-xl md:text-left text-gray-600 font-medium;
+}
+
+.blog-header .summary {
+    @apply text-gray-600 text-lg md:text-xl;
+}
+
+.blog-header .figure {
+    @apply rounded-xl w-full flex justify-center py-8 bg-stone-300 col-span-1 md:col-span-1;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}
+.img-max-set {
+  max-width: 282px;
+  max-height: 206;
+}
+.individual-blog {
+  @apply p-2 md:p-8;
+}
+/* Blog Styles */
+.blog-footer {
+  @apply bg-onyx py-3 px-1;
+}
+
+.blog-footer .grid-layout {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-2;
+}
+
+.blog-footer .card {
+  @apply rounded-md border hover:bg-violet-500 border-gray-300 text-white p-1 min-h-14 grid grid-cols-3;
+}
+
+.blog-footer .card-disabled {
+  @apply rounded-md border border-gray-300 text-white p-1 min-h-14 grid grid-cols-3;
+}
+
+.blog-footer .card-image {
+  @apply col-span-1;
+}
+
+.blog-footer .card-image-size {
+  @apply w-20 h-20;
+}
+
+.blog-footer .card-title {
+  @apply text-sm md:text-base col-span-2 text-center items-center flex;
+}
+
+.blog-footer .card-alt {
+  @apply border rounded-md hover:bg-yellow-500 border-gray-300 text-white p-1 min-h-14 grid grid-cols-3;
+}
+
+.blog-footer .card-alt-disabled {
+  @apply border rounded-md border-gray-300 text-white p-1 min-h-14 grid grid-cols-3;
+}
+
+.blog-footer .card-alt-title {
+  @apply text-sm md:text-base flex justify-center items-center col-span-2;
+}
+
+.blog-footer .card-alt-image {
+  @apply col-span-1 flex justify-end;
+}

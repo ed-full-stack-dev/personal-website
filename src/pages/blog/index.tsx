@@ -15,7 +15,7 @@ interface BlogTemplateProps {
     allContentfulBlog: {nodes: ContentfulBlogPost[]} ;
   };
 }
-function Blog({ data }: BlogTemplateProps) {
+function Blogs({ data }: BlogTemplateProps) {
   const blogs = data.allContentfulBlog.nodes;
   return (
     <div>
@@ -34,7 +34,7 @@ export const Head: HeadFC<I_SiteMetadata> = (props) => {
   )
 }
 
-export default Blog
+export default Blogs;
 
 export const query = graphql`
 query AllBlogs {
