@@ -30,7 +30,6 @@ interface Head_Props extends HeadProps {
     contentfulBlog: ContentfulBlogPost;
 }
 export const Head: HeadFC<Head_Props> = (props) => {
-    console.log('Head Blog', props.data.contentfulBlog);
     const { pathname } = props.location;
     const { title, summary } = props.data.contentfulBlog
     return (

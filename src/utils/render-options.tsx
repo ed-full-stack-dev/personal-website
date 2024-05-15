@@ -9,7 +9,6 @@ interface CodeBlockProps {
 }
 
 const CodeBlock: React.FC<CodeBlockProps> = ({ codeString, language = 'javascript' }) => {
-  console.log('CodeBlock', codeString);
   return (
     <div>
       <SyntaxHighlighter
@@ -52,7 +51,6 @@ export function getLanguageFromCode(codeStr: string) {
 
 
 export function renderOptions(content: any) {
-  console.log('content', content)
   let entryMap = new Map();
   if (content?.links?.assets?.block) {
     const assets = content?.links?.assets?.block;
