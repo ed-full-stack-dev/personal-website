@@ -53,6 +53,6 @@ export const Head: HeadFC<I_SiteMetadata> = (props) => {
   const { image, description, siteUrl, title, twitterUsername } = props.data.site.siteMetadata;
   const { pathname } = props.location;
   return (
-    <SEO twitterUsername={twitterUsername} pathname={pathname} author="Edgar Rojas" keywords={['Web Development', 'React']} image={image} description={description} url={siteUrl} title={title} />
+    <SEO twitterUsername={twitterUsername} pathname={pathname} author="Edgar Rojas" keywords={['Web Development', 'React']} image={image} description={description} url={siteUrl} title={`${title} | Home`} />
   )
 }

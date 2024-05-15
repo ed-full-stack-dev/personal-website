@@ -2,9 +2,10 @@ import React from 'react'
 import Navigation from '../components/navigation'
 import ContactSection from '../components/contact-section'
 import Footer from '../components/footer'
-import { graphql, PageProps } from 'gatsby';
+import { graphql, HeadFC, PageProps } from 'gatsby';
 import { ContentfulBlogPost } from '../types/all-contentful-blogs';
 import I_SiteMetadata from '../types/site-metadate.interface';
+import SEO from '../components/seo';
 export const query = graphql`
 query SiteMetaData {
   site {
@@ -44,3 +45,12 @@ function Contact(props: PageProps<I_PageProps>) {
 }
 
 export default Contact
+
+
+export const Head: HeadFC<I_SiteMetadata> = (props) => {
+  const { image, description, siteUrl, title, twitterUsername } = props.data.site.siteMetadata;
+  const { pathname } = props.location;
+  return (
+    <SEO twitterUsername={twitterUsername} pathname={pathname} author="Edgar Rojas" keywords={['contact', 'web developer']} image={image} description={description} url={siteUrl} title={`${title} | Contact`} />
+  )
+}

@@ -150,3 +150,43 @@ body {
   .form-group button {
     @apply p-2 text-white rounded-lg inline-block max-w-max px-12 bg-light-purple hover:bg-light-sky-blue;
   }
+
+  /* Blog */
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .puzzle-pieces {
+    @apply grid grid-cols-2 gap-4;
+  }
+  .puzzle-pieces .puzzle:nth-child(1) {
+    @apply text-orange-400 size-28;
+    transform: rotate(45deg);
+    animation: rotate 43s linear infinite;
+  }
+  .puzzle-pieces .puzzle:nth-child(2) {
+    @apply text-light-purple size-24;
+    transform: rotate(-35deg);
+  }
+  .puzzle-pieces .puzzle:nth-child(3) {
+    @apply text-light-sky-blue size-20;
+    transform: rotate(15deg);
+  }
+  .puzzle-pieces .puzzle:nth-child(4) {
+    @apply text-green-400 size-32;
+    transform: rotate(-10deg);
+    animation: rotate 25s linear infinite;
+  }
+  .puzzle-pieces .puzzle:nth-child(5) {
+    @apply text-yellow-400 size-24;
+    transform: rotate(20deg);
+    animation: rotate 30s linear infinite;
+  }
+  .puzzle-pieces .puzzle:nth-child(6) {
+    @apply text-purple-400 size-20;
+    transform: rotate(-30deg);
+  }
