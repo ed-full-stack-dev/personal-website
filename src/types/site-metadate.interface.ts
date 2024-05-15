@@ -6,6 +6,7 @@ export default interface I_SiteMetadata {
             description: string;
             image: string;
             twitterUsername: string;
+            blogCardImage: string;
         }
     }
 }

@@ -8,6 +8,7 @@ const config: GatsbyConfig = {
     siteUrl: `https://e-rojas.com`,
     description: `Portfolio website for Edgar Rojas Full Stack Developer`,
     image: `/home.png`,
+    blogCardImage: `/blog-card.png`,
     twitterUsername: `@e_rojas_dev`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.

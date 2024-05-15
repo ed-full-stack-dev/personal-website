@@ -1,14 +1,23 @@
 import React from 'react'
 import Navigation from '../../components/navigation'
-import { StaticImage } from 'gatsby-plugin-image'
 import { FaGithub, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
 import { BsPuzzle } from "react-icons/bs";
-function Blog() {
+import BlogCard from '../../components/blog-card';
+import { graphql } from 'gatsby';
+import { ContentfulBlogPost } from '../../types/all-contentful-blogs';
+import Footer from '../../components/footer';
+interface BlogTemplateProps {
+  data: {
+    allContentfulBlog: {nodes: ContentfulBlogPost[]} ;
+  };
+}
+function Blog({ data }: BlogTemplateProps) {
+  const blogs = data.allContentfulBlog.nodes;
   return (
     <div>
       <Navigation />
-      <section className="hero">
-        <div className="wrapper">
+      <div className="hero">
+        <section className="wrapper">
           <div className="content">
             <div className="flex-center">
               <h1 className="title">Code & Creativity: My Journey in Web Development</h1>
@@ -34,11 +43,41 @@ function Blog() {
             <BsPuzzle className='puzzle' />
             <BsPuzzle className='puzzle' />
           </div>
-        </div>
-      </section>
-
+        </section>
+        <hr className='mt-6' />
+        <section className="blog ">
+        <BlogCard author='Steve Jobs' quote={true} quoteText='Innovation distinguishes between a leader and a follower.' className='bg-onyx' />
+        {
+          blogs && blogs.map((blog:ContentfulBlogPost) => (
+            <BlogCard title={blog.title} date={blog.date} description={blog.summary} gatsbyImg={blog.blogImage.gatsbyImageData} slug={blog.slug} key={blog.id} />
+          ))
+        }
+        </section>
+      </div>
+      <Footer blogs={blogs} />
     </div>
   )
 }
 
 export default Blog
+
+export const query = graphql`
+query AllBlogs {
+  allContentfulBlog(sort: {date: DESC}) {
+    nodes {
+      author
+      date
+      id
+      slug
+      title
+      summary
+      blogImage {
+        gatsbyImageData(layout: CONSTRAINED, placeholder: DOMINANT_COLOR)
+      }
+      authorImage {
+        gatsbyImageData(jpegProgressive: true)
+      }
+    }
+  }
+}
+`;
