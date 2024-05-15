@@ -9,9 +9,6 @@ function Navigation() {
                     <Link activeClassName='text-violet-600' to='/'>Home</Link>
                 </li>
                 <li>
-                    <Link activeClassName='text-violet-600' to='/about'>About</Link>
-                </li>
-                <li>
                     <Link activeClassName='text-violet-600' to='/contact'>Contact</Link>
                 </li>
                 <li>

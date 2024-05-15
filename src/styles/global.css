@@ -101,14 +101,14 @@ body {
 
   /* Contact */
   .gradient-background {
-    background: linear-gradient(to bottom, #C3DEE6 0%, #ffffff 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #1F2937 100%);
     @apply gap-y-14;
   }
   .intro h1 {
-    @apply text-4xl font-bold text-center mt-4;
+    @apply text-4xl font-bold text-center mt-4 text-light-purple;
   }
   .intro p {
-    @apply text-lg font-medium text-center;
+    @apply text-lg font-medium text-center text-gray-400;
   }
   .form-wrapper {
     @apply bg-white grid grid-cols-1 md:grid-cols-4 gap-4 p-4 shadow-2xl rounded-lg;
@@ -124,7 +124,7 @@ body {
     background-repeat: no-repeat;
   }
   .form-wrapper .blob h2 {
-    @apply text-2xl font-thin text-black;
+    @apply text-2xl font-bold text-light-sky-blue;
   }
   .form-wrapper .blob p {
     @apply text-lg font-medium;
@@ -148,5 +148,5 @@ body {
     @apply p-2 rounded-lg border border-gray-300;
   }
   .form-group button {
-    @apply p-2 text-white rounded-lg inline-block max-w-max px-12 bg-light-sky-blue hover:bg-light-purple;
+    @apply p-2 text-white rounded-lg inline-block max-w-max px-12 bg-light-purple hover:bg-light-sky-blue;
   }
