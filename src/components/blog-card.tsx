@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import React from 'react'
-export default function BlogCard ({ gatsbyImg, title,author = 'unknown', date, description, image, quote, className, quoteText, slug }: { title?: string, date?: string, description?: string, image?: string, quote?: boolean, className?: string, quoteText?: string, author?: string , slug?: string, gatsbyImg?: IGatsbyImageData}) {
+export default function BlogCard ({ gatsbyImg, title,author = 'unknown', date, description, image, quote, className, quoteText, slug, authorImage }: { title?: string, date?: string, description?: string, image?: string, quote?: boolean, className?: string, quoteText?: string, author?: string , slug?: string, gatsbyImg?: IGatsbyImageData, authorImage?: IGatsbyImageData}) {
     if (quote) {
       return (
         <div className={`card flex flex-col justify-between ${className}`}>
@@ -14,7 +14,8 @@ export default function BlogCard ({ gatsbyImg, title,author = 'unknown', date, d
     }
     const _date = date && new Date(date).toLocaleDateString('default',{month:'long', day:'numeric', year: 'numeric'}) || 'unknown'
   return (
-      <Link to={`/blog/${slug}`} className='card bg-creme '>
+      <Link to={`/blog/${slug}`} className='card bg-creme  '>
+        {authorImage && <GatsbyImage image={authorImage} alt={author} className="author-image" />}
         {image && <img width={100} src={image} alt={title} />}
         {gatsbyImg && <GatsbyImage image={gatsbyImg} alt={author} className="gatsbyImg" />}
         <span>{_date}</span>
