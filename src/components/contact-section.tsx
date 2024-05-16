@@ -1,22 +1,9 @@
 import { navigate } from 'gatsby'
-import React from 'react'
-
+import React, { ChangeEvent, FormEvent } from 'react'
+import useForm  from '../hooks/use-form'
 function ContactSection() {
-    const [state, setState] = React.useState({subject:'', name: "", email: "", message: ""})
-    const handleChange = (e:any) => {
-        setState({ ...state, [e.target.name]: e.target.value })
-      }
-      const handleSubmit = (e:any) => {
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "contact", ...state })
-        })
-          .then(() => alert("Success!"))
-          .catch(error => alert(error));
-  
-        e.preventDefault();
-      };
+    const { state, status, handleChange, handleSubmit, disabled } = useForm({ subject: '', name: "", email: "", message: "" })
+
     return (
         <div className='gradient-background min-h-[600px] flex flex-col items-center'>
             <div className='intro'>
@@ -36,11 +23,8 @@ function ContactSection() {
                     className='form'
                     onSubmit={handleSubmit}
                 >
-                    <label>
-                        Don’t fill this out: <input name="bot-field" onChange={handleChange} />
-                    </label>
 
-
+                    {status.info.msg && <p className='success'>{status.info.msg}</p>}
                     <div className='form-group'>
                         <label htmlFor='subject'>Subject</label>
                         <input onChange={handleChange} value={state.subject} type='text' id='subject' name='subject' placeholder='Subject' />
@@ -51,14 +35,20 @@ function ContactSection() {
                     </div>
                     <div className='form-group'>
                         <label htmlFor='email'>Email</label>
-                        <input onChange={handleChange} value={state.email}  type='email' id='email' name='email' placeholder='Your Email' />
+                        <input onChange={handleChange} value={state.email} type='email' id='email' name='email' placeholder='Your Email' />
                     </div>
                     <div className='form-group'>
                         <label htmlFor='message'>Message</label>
                         <textarea onChange={handleChange} value={state.message} id='message' name='message' placeholder='Your Message'></textarea>
                     </div>
                     <div className="form-group">
-                        <button type='submit' className='btn'>Send</button>
+                        <button
+                            disabled={disabled}
+                            type='submit'
+                            className={` ${disabled ? 'disabled' : ''}`}
+                        >
+                            Send
+                        </button>
                     </div>
                 </form>
             </div>
@@ -69,9 +59,9 @@ function ContactSection() {
 export default ContactSection
 
 
-function encode(data: any) {
-    return Object.keys(data)
-      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&')
-  }
-  
+// function encode(data: any) {
+//     return Object.keys(data)
+//         .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+//         .join('&')
+// }
+

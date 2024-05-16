@@ -152,7 +152,13 @@ body {
   }
   .form-group button {
     @apply p-2 text-white rounded-lg inline-block max-w-max px-12 bg-light-purple hover:bg-light-sky-blue;
-  }
+}
+.form-group button.disabled {
+    @apply bg-gray-300 cursor-not-allowed;
+}
+form p.success {
+    @apply text-green-400 p-4 bg-green-100 rounded-lg text-center font-medium text-2xl ;
+}
 
   /* Blog */
   @keyframes rotate {
