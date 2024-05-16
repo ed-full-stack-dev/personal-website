@@ -12,7 +12,7 @@ export const RICHTEXT_OPTIONS = {
         );
       },
       [BLOCKS.UL_LIST]: (node: any, children: any) => {
-        return <ul className="list-disc ml-8">{children}</ul>;
+        return <ul className="blog-ul">{children}</ul>;
       },
       [BLOCKS.PARAGRAPH]: (node: any, children: any) => {
         const nodeHasVideoLink = node?.content.find(
@@ -21,12 +21,12 @@ export const RICHTEXT_OPTIONS = {
         if (nodeHasVideoLink) {
           const videoId = nodeHasVideoLink?.data.uri.split("youtu.be/")[1];
           return (
-            <div className="rounded-lg p-2 flex justify-center mt-6 bg-orange-400   w-full">
+            <div className="vlog">
               <iframe
                 className=""
                 title="Tutorial Video"
-                width="560"
-                height="315"
+                // width="560"
+                // height="315"
                 src={`https://www.youtube.com/embed/${videoId}`}
                 allowFullScreen
               ></iframe>

@@ -302,3 +302,18 @@ code {
 .blog-footer .card-alt-image {
   @apply col-span-1 flex justify-end;
 }
+.blog-article-wrapper {
+  @apply grid grid-cols-1 md:grid-cols-5 md:gap-4;
+}
+.blog-article {
+  @apply p-2 col-span-4 sm:border-none md:border-r-2 md:border-l-2 md:border-gray-300;
+}
+.blog-ul {
+  @apply list-disc pl-5;
+}
+.vlog {
+  @apply flex flex-col items-center  p-4 my-4  rounded-lg  shadow-2xl;
+}
+.vlog iframe {
+  @apply w-auto md:w-[560px] md:h-[315px];
+}

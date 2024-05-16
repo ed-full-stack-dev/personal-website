@@ -1,8 +1,5 @@
 import React from 'react'
 import Navigation from '../../components/navigation'
-import { FaGithub, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
-import { BsPuzzle } from "react-icons/bs";
-import BlogCard from '../../components/blog-card';
 import { graphql, HeadFC } from 'gatsby';
 import { ContentfulBlogPost } from '../../types/all-contentful-blogs';
 import Footer from '../../components/footer';

@@ -5,8 +5,8 @@ import SideBarBlog from './side-bar';
 
 function BlogBodyAndSidebar({ raw }: { raw: string }) {
     return (
-        <section className=" grid grid-cols-1 md:grid-cols-5">
-            <article className="blog-section p-2 col-span-4 sm:border-none md:border-r-2 md:border-l-2 md:border-gray-300">
+        <section className="blog-article-wrapper">
+            <article className="blog-article">
                 {raw &&
                     documentToReactComponents(JSON.parse(raw), RICHTEXT_OPTIONS)}
             </article>
