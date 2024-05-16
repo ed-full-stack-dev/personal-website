@@ -1,6 +1,25 @@
+import { navigate } from 'gatsby'
 import React from 'react'
 
 function ContactSection() {
+    const [state, setState] = React.useState({})
+    const handleChange = (e: any) => {
+        setState({ ...state, [e.target.name]: e.target.value })
+      }
+      const handleSubmit = (e:any) => {
+        e.preventDefault()
+        const form = e.target
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode({
+            'form-name': form.getAttribute('name'),
+            ...state,
+          }),
+        })
+          .then(() => navigate(form.getAttribute('action')))
+          .catch((error) => alert(error))
+      }
     return (
         <div className='gradient-background min-h-[600px] flex flex-col items-center'>
             <div className='intro'>
@@ -12,7 +31,18 @@ function ContactSection() {
                     <h2>Let's Connect!</h2>
                     <p>Drop me a line – I'd love to hear from you.</p>
                 </div>
-                <form className='form'>
+                <form
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    className='form'
+                >
+                    <label>
+                        Don’t fill this out: <input name="bot-field" onChange={handleChange} />
+                    </label>
+
+
                     <div className='form-group'>
                         <label htmlFor='subject'>Subject</label>
                         <input type='text' id='subject' name='subject' placeholder='Subject' />
@@ -39,3 +69,11 @@ function ContactSection() {
 }
 
 export default ContactSection
+
+
+function encode(data: any) {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&')
+  }
+  
