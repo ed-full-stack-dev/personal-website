@@ -7,10 +7,9 @@ function HeroSection() {
             <div className="wrapper">
                 <div className="content">
                     <div className="flex-center">
-                        <span className="font-style">{`<Full Stack Developer/>`}</span>
-                        <h1 className="title">Hello, I'm Edgar Rojas</h1>
+                        <h1 className="title">Welcome to my portfolio!</h1>
                     </div>
-                    <p className="description">Seasoned in full-stack development, specializing in delivering comprehensive web solutions from concept to deployment. Utilizing cutting-edge technologies to create scalable, robust, and visually appealing applications. Expertise ensures seamless integration of front-end and back-end systems, tailored to meet unique project requirements. Ready to elevate digital presence? Let’s partner to transform ideas into exceptional digital experiences.</p>
+                    <p className="description">As a seasoned web developer specializing in React and full-stack technologies, I deliver tailored web solutions that bridge the gap between stunning aesthetics and functional precision. My expertise lies in crafting scalable applications, from conception through to deployment, ensuring a seamless fusion of front-end flair and robust back-end systems. Are you looking to elevate your digital presence? Let's collaborate and transform your visions into impactful digital realities.</p>
                     <div className="links">
                         <a target="_blank" rel="noopener noreferrer" href="https://github.com/ed-full-stack-dev" className="btn">
                             <FaGithub className="icon" />

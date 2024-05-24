@@ -1,6 +1,6 @@
-import { navigate } from 'gatsby'
-import React, { ChangeEvent, FormEvent } from 'react'
-import useForm  from '../hooks/use-form'
+import { navigate } from 'gatsby';
+import React from 'react';
+import useForm  from '../hooks/use-form';
 function ContactSection() {
     const { state, status, handleChange, handleSubmit, disabled } = useForm({ subject: '', name: "", email: "", message: "" })
 
