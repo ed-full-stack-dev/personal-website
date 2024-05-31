@@ -338,3 +338,47 @@ code {
 .navigation ul {
   @apply space-x-4 px-3 text-2xl font-medium hidden md:flex;
 }
+
+/* Experience Section */
+
+.exp-section {
+  @apply min-h-[600px] flex flex-col;
+}
+.exp-section-wrapper {
+  @apply flex flex-col flex-grow px-2;
+}
+.exp-section-header {
+  @apply text-5xl font-bold text-purple-500 mb-10;
+}
+
+.exp-section-content {
+  @apply gap-4 flex-grow grid grid-cols-1 md:grid-cols-5 px-4;
+}
+
+.exp-section-list {
+  @apply col-span-1 border-l-black border-l-4 flex flex-col justify-center;
+}
+
+.exp-section-list-item {
+  @apply py-2 px-4 rounded outline-1 cursor-pointer transition-colors duration-300 ease-in-out;
+}
+
+.exp-section-details {
+  @apply col-span-4 flex flex-col justify-center px-3;
+}
+
+.title {
+  @apply text-xl font-bold;
+}
+
+.title-date-company {
+  @apply text-purple-500;
+}
+
+.duties {
+  @apply space-y-4 text-lg text-gray-500 font-medium ml-3;
+}
+
+.duties-item {
+  @apply flex items-baseline gap-x-2;
+}
