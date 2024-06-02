@@ -7,9 +7,10 @@ import Footer from "../components/footer";
 import I_SiteMetadata from "../types/site-metadate.interface";
 import SEO from "../components/seo";
 import { ContentfulBlogPost } from "../types/all-contentful-blogs";
-import ContentfulExperience from "../types/all-contentful-experience";
+import ContentfulExperience, { ContentfulPersonalInfo } from "../types/all-contentful-experience";
 import ExperienceSection from "../components/experience-section";
-
+import SkillsSection from "../components/skills-section";
+import PersonalSection from "../components/personal-section";
 export const query = graphql`
 query SiteMetaData {
   site {
@@ -37,6 +38,17 @@ query SiteMetaData {
       id
     }
   }
+  allContentfulPersonal {
+    nodes {
+      story {
+        story
+      }
+      webDesign
+      frontEnd
+      backEnd
+      softSkills
+    }
+  }
 }
 `;
 interface I_PageProps {
@@ -49,11 +61,15 @@ interface I_PageProps {
   allContentfulExperience: {
     nodes: ContentfulExperience[]
   }
+  allContentfulPersonal: {
+    nodes: ContentfulPersonalInfo[]
+  }
 }
 
 const IndexPage: React.FC<PageProps<I_PageProps>> = (props) => {
   const { nodes: blogs } = props.data.allContentfulBlog;
   const { nodes: resumeNodes } = props.data.allContentfulExperience;
+  const { webDesign, frontEnd, backEnd, softSkills, story: { story } } = props.data.allContentfulPersonal.nodes[0];
   const [expSelected, setExpSelected] = React.useState(resumeNodes[0]);
   function handleExpSelection(id: string) {
     const selectedExp = resumeNodes.find(exp => exp.id === id);
@@ -68,6 +84,8 @@ const IndexPage: React.FC<PageProps<I_PageProps>> = (props) => {
       <Navigation />
       <HeroSection />
       <ExperienceSection resumeNodes={resumeNodes} handleExpSelection={handleExpSelection} expSelected={expSelected} isSelected={isSelected} />
+      <SkillsSection webDesignTitle="Web Design" webDesignDuties={webDesign} frontEndTitle="Front End" frontEndDuties={frontEnd} backEndTitle="Back End" backEndDuties={backEnd} softSkillsTitle="Soft Skills" softSkillsDuties={softSkills} />
+      <PersonalSection title="My Story" story={story} />
       <TechStackBar />
       <Footer blogs={blogs} />
     </main>
@@ -81,23 +99,5 @@ export const Head: HeadFC<I_SiteMetadata> = (props) => {
   const { pathname } = props.location;
   return (
     <SEO twitterUsername={twitterUsername} pathname={pathname} author="Edgar Rojas" keywords={['Web Development', 'React']} image={image} description={description} url={siteUrl} title={`${title} | Home`} />
-  )
-}
-
-function TitleDate({ title, date, company }: { title: string, date: string, company: string }) {
-  return (
-    <div>
-      <h1 className="position text-xl font-bold">{title}<span className=" text-purple-500"> @{company}</span></h1>
-      <p className="text-gray-500">{new Date(date).toLocaleDateString()}</p>
-    </div>
-  )
-}
-function Duties({ duties }: { duties: string[] }) {
-  return (
-    <ul className="duties space-y-4 text-lg text-gray-500 font-medium ml-3">
-      {
-        duties.map((duty) => <li className="flex items-baseline gap-x-2">{duty}</li>)
-      }
-    </ul>
   )
 }
