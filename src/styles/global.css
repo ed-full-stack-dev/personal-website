@@ -342,16 +342,19 @@ code {
 /* Experience Section */
 
 .exp-section {
-  @apply min-h-[600px] flex flex-col;
+  @apply min-h-[600px] flex flex-col mt-10;
 }
-.exp-section-wrapper {
+.personal-section {
+  @apply min-h-fit flex flex-col mt-10;
+}
+.exp-section-wrapper, .section-wrapper {
   @apply flex flex-col flex-grow px-2;
 }
-.exp-section-header {
+.exp-section-header, .section-header {
   @apply text-5xl font-bold text-purple-500 mb-10;
 }
 
-.exp-section-content {
+.exp-section-content, .section-content {
   @apply gap-4 flex-grow grid grid-cols-1 md:grid-cols-5 px-4;
 }
 

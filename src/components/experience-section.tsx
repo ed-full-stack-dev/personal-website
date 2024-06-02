@@ -39,17 +39,28 @@ export default function ExperienceSection({ resumeNodes, handleExpSelection, exp
     )
 }
 
-function TitleDate({ title, date, company }: { title: string, date: string, company: string }) {
+interface TitleDateProps {
+    title: string;
+    date?: string;
+    company?: string;
+}
+export function TitleDate({ title, date, company }: TitleDateProps) {
     return (
         <div>
-            <h1 className="title">{title}<span className="title-date-company"> @{company}</span></h1>
-            <p className="text-gray-500">{new Date(date).toLocaleDateString()}</p>
+            <h1 className="title">{title}
+                {
+                    company && <span className="title-date-company">{` @${company}`}</span>
+                }
+            </h1>
+            {
+                date && <p className="text-gray-500">{new Date(date).toLocaleDateString()}</p>
+            }
         </div>
     )
 }
-function Duties({ duties }: { duties: string[] }) {
+export function Duties({ duties, extraClasses }: { duties: string[], extraClasses?: string}) {
     return (
-        <ul className="duties">
+        <ul className={`duties ${extraClasses}`}>
             {
                 duties.map((duty) => <li className="duties-item">{duty}</li>)
             }
